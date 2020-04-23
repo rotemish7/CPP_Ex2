@@ -54,7 +54,7 @@ namespace family
      * @param mother
      * @return
      */
-    Tree& ::Tree::addMother(string child, string mother)
+    Tree& Tree::addMother(string child, string mother)
     {
         Tree* temp = search(child, this);
         if (temp == NULL)
