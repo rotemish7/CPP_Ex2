@@ -8,32 +8,23 @@
 
 using namespace std;
 
-class node
-{
-    public:
-        string name;
-        node *mother;
-        node *father;
-        node * child;
-
-        node(string name)
-        {
-            (*this).name=name;
-            (*this).mother= nullptr;
-            (*this).father= nullptr;
-            (*this).child = nullptr;
-        }
-};
-
 namespace family
 {
     class Tree
     {
+        string name;
+        Tree* father;
+        Tree* mother;
+        Tree* child;
+
         public:
-            node *root;
+
             Tree(string name)
             {
-                this->root = new node(name);
+                this->name = name;
+                this->mother = nullptr;
+                this->father = nullptr;
+                this->child = nullptr;
             }
 
             Tree& addFather(string child,string father);
@@ -44,7 +35,8 @@ namespace family
             void display();
 
         private:
-            node* search(string name, Tree* t);
+
+            Tree* search(string name, Tree* t);
             void print2DUtil(Tree *root, int space);
             string findH(int count, Tree* temp, int type);
     };

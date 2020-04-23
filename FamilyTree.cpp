@@ -12,7 +12,7 @@ namespace family
      * @param node
      * @return
      */
-    node* Tree::search(string name, Tree* node)
+    Tree* Tree::search(string name, Tree* node)
     {
         if(node == NULL) return NULL;
         if(node->name == name) return node;
