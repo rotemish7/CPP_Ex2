@@ -29,14 +29,14 @@ namespace family
      * @param father
      * @return
      */
-    Tree &family::Tree::addFather(string child, string father)
+    Tree& Tree::addFather(string child, string father)
     {
         Tree* temp = search(child, this);
-        if (temp == NULL)
+        if (temp == nullptr)
         {
             throw runtime_error("No such name");
         }
-        else if (temp->father != NULL)
+        else if (temp->father != nullptr)
         {
             throw runtime_error("Already has a father");
         }
@@ -54,7 +54,7 @@ namespace family
      * @param mother
      * @return
      */
-    Tree &family::Tree::addMother(string child, string mother)
+    Tree& ::Tree::addMother(string child, string mother)
     {
         Tree* temp = search(child, this);
         if (temp == NULL)
