@@ -31,7 +31,7 @@ namespace family
      */
     Tree &family::Tree::addFather(string child, string father)
     {
-        node* temp = search(child, this);
+        Tree* temp = search(child, this);
         if (temp == NULL)
         {
             throw runtime_error("No such name");
