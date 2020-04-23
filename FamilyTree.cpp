@@ -61,7 +61,7 @@ namespace family
         {
             throw runtime_error("No such name");
         }
-        else if (temp->father != NULL)
+        else if (temp->mother != NULL)
         {
             throw runtime_error("Already has a mother");
         }
