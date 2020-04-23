@@ -5,6 +5,24 @@ using namespace std;
 
 namespace family
 {
+
+    /**
+     *
+     * @param name
+     * @param node
+     * @return
+     */
+    node* Tree::search(string name, Tree* node)
+    {
+        if(node == NULL) return NULL;
+        if(node->name == name) return node;
+        Tree* Father = search(name, node->father);
+        Tree* Mother = search(name, node->mother);
+        if(Father != NULL) return Father;
+        if(Mother != NULL) return Mother;
+        return NULL;
+    }
+
     /**
      *
      * @param child
@@ -13,7 +31,7 @@ namespace family
      */
     Tree &family::Tree::addFather(string child, string father)
     {
-        Tree* temp = search(child, this);
+        node* temp = search(child, this);
         if (temp == NULL)
         {
             throw runtime_error("No such name");
@@ -206,23 +224,6 @@ namespace family
             return mother_T;
         }
         return father_T;
-    }
-
-    /**
-     *
-     * @param name
-     * @param node
-     * @return
-     */
-    Tree* Tree::search(string name, Tree* node)
-    {
-        if(node == NULL) return NULL;
-        if(node->name == name) return node;
-        Tree* Father = search(name, node->father);
-        Tree* Mother = search(name, node->mother);
-        if(Father != NULL) return Father;
-        if(Mother != NULL) return Mother;
-        return NULL;
     }
 
     /**

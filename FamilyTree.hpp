@@ -14,11 +14,14 @@ class node
         string name;
         node *mother;
         node *father;
+        node * child;
+
         node(string name)
         {
             (*this).name=name;
             (*this).mother= nullptr;
             (*this).father= nullptr;
+            (*this).child = nullptr;
         }
 };
 
@@ -37,8 +40,13 @@ namespace family
             Tree& addMother(string child,string mother);
             string relation(string name);
             string find(string relation);
-            bool remove(string name);
+            void remove(string name);
             void display();
+
+        private:
+            node* search(string,*Tree);
+            void print2DUtil(Tree *root, int space);
+            string findH(int count, Tree* temp, int type);
     };
 }
 
