@@ -274,7 +274,7 @@ namespace family
      * @param root
      * @param space
      */
-    void print2DUtil(Tree *root, int space)
+    void Tree::print2DUtil(Tree *root, int space)
     {
         if (root == NULL)          // Base case
             return;
