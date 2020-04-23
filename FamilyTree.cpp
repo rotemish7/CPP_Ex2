@@ -174,7 +174,7 @@ namespace family
             }
             if(relation.find("mother") != string::npos)
             {
-                string str = findH(count, this, 1);
+                string str = find_help(count, this, 1);
                 if (str == "NULL")
                 {
                     throw runtime_error("No such relationship");
@@ -183,7 +183,7 @@ namespace family
             }
             else if(relation.find("father") != string::npos)
             {
-                string str = findH(count, this, 0);
+                string str = find_help(count, this, 0);
                 if (str == "NULL")
                 {
                     throw runtime_error("No such relationship");
@@ -217,8 +217,8 @@ namespace family
             }
             else return "NULL";
         }
-        string father_T = findH(count-1, temp->father, type);
-        string mother_T = findH(count-1, temp->mother, type);
+        string father_T = find_help(count-1, temp->father, type);
+        string mother_T = find_help(count-1, temp->mother, type);
         if(mother_T.compare("NULL"))
         {
             return mother_T;
