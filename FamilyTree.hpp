@@ -43,7 +43,7 @@ namespace family
         private:
             void print2DUtil(Tree *root, int space);
             Tree* search(string name, Tree* t);
-            string findH(int count, Tree* temp, int type);
+            string find_help(int count, Tree* temp, int type);
     };
 }
 

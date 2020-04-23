@@ -202,7 +202,7 @@ namespace family
      * @param type
      * @return
      */
-    string Tree::findH(int count, Tree* temp, int type)
+    string Tree::find_help(int count, Tree* temp, int type)
     {
         if(temp == NULL) return "NULL";
         if(count == 1)
