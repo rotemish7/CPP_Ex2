@@ -44,7 +44,7 @@ namespace family
             void display();
 
         private:
-            node* search(string,*Tree);
+            node* search(string name, Tree* t);
             void print2DUtil(Tree *root, int space);
             string findH(int count, Tree* temp, int type);
     };
