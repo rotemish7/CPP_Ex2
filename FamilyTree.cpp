@@ -101,7 +101,7 @@ namespace family
         }
         while(count>3)
         {
-            rela+="great-";
+            name_relation+="great-";
             count--;
         }
         ans = ans->child;
@@ -153,7 +153,7 @@ namespace family
                 return this->mother->mother->name;
             else throw runtime_error("No such relationship");
         }
-        else if(relat.compare("grandfather") == 0)
+        else if(relation.compare("grandfather") == 0)
         {
             if(this->father != NULL && this->father->father != NULL)
                 return this->father->father->name;
@@ -161,7 +161,7 @@ namespace family
                 return this->mother->father->name;
             else throw runtime_error("No such relationship");
         }
-        else if(relat.find("great-") == 0)
+        else if(relation.find("great-") == 0)
         {
             size_t found = relation.find("great-");
             int count=3;
@@ -217,8 +217,8 @@ namespace family
             }
             else return "NULL";
         }
-        string father_T = findH(count-1, leaf->father, type);
-        string mother_T = findH(count-1, leaf->mother, type);
+        string father_T = findH(count-1, temp->father, type);
+        string mother_T = findH(count-1, temp->mother, type);
         if(mother_T.compare("NULL"))
         {
             return mother_T;
@@ -283,7 +283,7 @@ namespace family
         cout << endl;          // Print current node after space
         for (int i = 10; i < space; i++)
             cout << " ";
-        cout << root->data << "\n";
+        cout << root->name << "\n";
         print2DUtil(root->mother, space);          // Process left child
     }
 };

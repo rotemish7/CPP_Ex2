@@ -27,6 +27,12 @@ namespace family
                 this->child = nullptr;
             }
 
+            ~Tree()
+            {
+                delete this->father;
+                delete this->mother;
+            }
+
             Tree& addFather(string child,string father);
             Tree& addMother(string child,string mother);
             string relation(string name);
@@ -35,9 +41,8 @@ namespace family
             void display();
 
         private:
-
-            Tree* search(string name, Tree* t);
             void print2DUtil(Tree *root, int space);
+            Tree* search(string name, Tree* t);
             string findH(int count, Tree* temp, int type);
     };
 }
